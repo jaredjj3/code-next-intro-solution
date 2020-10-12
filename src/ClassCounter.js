@@ -9,6 +9,7 @@ export class ClassCounter extends Component {
     };
 
     this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
   }
 
   increment() {
@@ -18,20 +19,24 @@ export class ClassCounter extends Component {
     });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log(`prevCount: ${prevState.count}, count: ${this.state.count}`);
+  decrement() {
+    this.setState({
+      ...this.state,
+      count: this.state.count - 1
+    });
   }
 
-  componentWillUnmount() {
-    console.log(``)
+  componentDidUpdate(prevProps, prevState) {
+    console.log(`prevCount: ${prevState.count}, count: ${this.state.count}`);
   }
 
   render() {
     return (
       <>
-        <div>{this.state.count}</div>
+        <div>count: {this.state.count}</div>
         <div>
           <button onClick={this.increment}>increment</button>
+          <button onClick={this.decrement}>decrement</button>
         </div>
       </>
     );

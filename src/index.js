@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Counter } from './Counter';
+import { HookCounter } from './HookCounter';
 import { ClassCounter } from './ClassCounter';
 
 // Vanilla JS App
@@ -27,6 +27,10 @@ const decrement = () => {
 incrementButton.onclick = increment;
 decrementButton.onclick = decrement;
 
-// React App
-const reactAppDiv = document.getElementById('react-app');
-ReactDOM.render(<Counter />, reactAppDiv);
+// React App w/ Hooks (the new way)
+const reactAppHooksDiv = document.getElementById('react-app-hooks');
+ReactDOM.render(<HookCounter />, reactAppHooksDiv);
+
+// React App w/ classes (the old way)
+const reactAppClassesDiv = document.getElementById('react-app-classes');
+ReactDOM.render(<ClassCounter />, reactAppClassesDiv);
