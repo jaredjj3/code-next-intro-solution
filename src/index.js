@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HookCounter } from './HookCounter';
 import { ClassCounter } from './ClassCounter';
+import { MouseTracker } from './MouseTracker';
 
 // Vanilla JS App
 let count = 0;
@@ -34,3 +35,7 @@ ReactDOM.render(<HookCounter />, reactAppHooksDiv);
 // React App w/ classes (the old way)
 const reactAppClassesDiv = document.getElementById('react-app-classes');
 ReactDOM.render(<ClassCounter />, reactAppClassesDiv);
+
+// MouseTracker
+const reactAppMouseTrackerDiv = document.getElementById('mouse-tracker');
+ReactDOM.render(<MouseTracker />, reactAppMouseTrackerDiv);
